@@ -14,20 +14,21 @@ string DetectorDeLetras(string f)
 {
     string vocal= "AEIOU";
     string consonante= "BCDFGHJKLMNPQRSTVWXZ";
+    string resultado="";
     for (int i = 0; i < f.size(); i++)
     {
         if (vocal.find(f[i]) != string::npos)
         {
-            f[i] = 'V';
+            resultado += 'V';
         }
-        else if (consonante.find(f[i]) != string::npos)
+        if (consonante.find(f[i]) != string::npos)
         {
-            f[i] = 'C';
+            resultado += 'C';
         }
-        else if (f[i] == 'Y')
+        if (f[i] == 'Y')
         {
-            f[i] = 'S';
+            resultado += 'S';
         }
     }
-    return f;
+    return resultado;
 }
